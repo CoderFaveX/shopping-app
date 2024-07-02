@@ -42,7 +42,7 @@ export default function CheckoutScreen({ route, navigation }) {
           cart.length === 0 && styles.checkoutButtonDisabled,
         ]}
         onPress={handleOrderSuccess}
-        disabled={cart.length === 0}
+        disabled={cart ? cart.length === 0 : true}
       >
         <Text style={styles.checkoutButtonText}>Place Order</Text>
       </TouchableOpacity>

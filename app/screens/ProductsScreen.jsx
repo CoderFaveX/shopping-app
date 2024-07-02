@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, FlatList, Image, StyleSheet, ActivityIndicator } from "react-native";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AsyncStorage } from "react-native";
 import axios from 'axios';
 
 const ProductsScreen = ({ navigation }) => {
