@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "project-shopping",
+    "slug": "project-shopping",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"],
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "Poppins": {
+            "100": "assets/fonts/Poppins-Thin.ttf",
+            "200": "assets/fonts/Poppins-ExtraLight.ttf",
+            "300": "assets/fonts/Poppins-Light.ttf",
+            "400": "assets/fonts/Poppins-Regular.ttf",
+            "500": "assets/fonts/Poppins-Medium.ttf",
+            "600": "assets/fonts/Poppins-SemiBold.ttf",
+            "700": "assets/fonts/Poppins-Bold.ttf",
+            "800": "assets/fonts/Poppins-ExtraBold.ttf",
+            "900": "assets/fonts/Poppins-Black.ttf"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
