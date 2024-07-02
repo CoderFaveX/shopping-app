@@ -3,7 +3,9 @@
     "name": "project-shopping",
     "slug": "project-shopping",
     "version": "1.0.0",
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -14,13 +16,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fave2009.shoppingapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.fave2009.shoppingapp"
     },
     "web": {
       "bundler": "metro",
@@ -48,6 +52,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7f41d51a-c0e0-4f05-a7b4-316dcc3b6318"
+      }
     }
   }
 }
