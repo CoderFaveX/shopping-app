@@ -25,12 +25,7 @@ const AppNavigation = () => {
     Poppins: require("../assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
   });
-
-  if (!fontsLoaded) {
-    return (
-      <Text>Loading....</Text>
-    );
-  }
+  
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen name="Home" component={HomeScreen} />

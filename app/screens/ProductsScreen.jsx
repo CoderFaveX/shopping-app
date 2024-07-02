@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, FlatList, Image, StyleSheet, ActivityIndicator } from "react-native";
-import { AsyncStorage } from "react-native";
 import axios from 'axios';
 
 const ProductsScreen = ({ navigation }) => {
@@ -10,7 +9,6 @@ const ProductsScreen = ({ navigation }) => {
 
   useEffect(() => {
     fetchProducts();
-    loadCartFromStorage();
   }, []);
 
   const fetchProducts = async () => {
@@ -31,35 +29,14 @@ const ProductsScreen = ({ navigation }) => {
     }
   };
 
-  const loadCartFromStorage = async () => {
-    try {
-      const cartItems = await AsyncStorage.getItem('@cart');
-      if (cartItems !== null) {
-        setCart(JSON.parse(cartItems));
-      }
-    } catch (error) {
-      console.error('Error loading cart from AsyncStorage:', error);
-    }
-  };
-
-  const saveCartToStorage = async () => {
-    try {
-      await AsyncStorage.setItem('@cart', JSON.stringify(cart));
-    } catch (error) {
-      console.error('Error saving cart to AsyncStorage:', error);
-    }
-  };
-
   const addToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
-    saveCartToStorage();
   };
 
   const removeFromCart = (product) => {
     const newCart = cart.filter(item => item.id !== product.id);
     setCart(newCart);
-    saveCartToStorage();
   };
 
   const isInCart = (product) => {
@@ -71,7 +48,7 @@ const ProductsScreen = ({ navigation }) => {
       <Image source={{ uri: item.image }} style={styles.productImage} />
       <View style={styles.productDetails}>
         <Text style={styles.productText}>{item.title}</Text>
-        <Text style={styles.productPrice}><Text style={{ fontFamily: "verdana" }}>₦</Text>{item.price * 50}</Text>
+        <Text style={styles.productPrice}>₦{item.price * 50}</Text>
       </View>
       <TouchableOpacity
         style={[

@@ -11,12 +11,7 @@ export default function BottomTabs() {
     Poppins: require("../../assets/fonts/Poppins-Regular.ttf"),
     "Poppins-Bold": require("../../assets/fonts/Poppins-Bold.ttf"),
   });
-
-  if (!fontsLoaded) {
-    return (
-      <Text>Loading....</Text>
-    );
-  }
+  
   return (
     <Tab.Navigator>
       <Tab.Screen name="Products" component={Products} />

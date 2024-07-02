@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "project-shopping",
+    "name": "Shopping App",
     "slug": "shopping-app",
     "version": "1.0.0",
     "assetBundlePatterns": [
@@ -58,7 +58,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "40563956-d74d-4d2a-9e77-f2f7c13438e9"
+        "projectId": "0437240e-8f16-4c75-86fa-78957d3f1289"
       }
     },
     "owner": "fave2009"

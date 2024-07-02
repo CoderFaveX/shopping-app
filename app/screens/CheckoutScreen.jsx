@@ -5,7 +5,7 @@ export default function CheckoutScreen({ route, navigation }) {
   const { cart } = route.params || [];
 
   const handleOrderSuccess = () => {
-    if (cart.length === 0) {
+    if (!cart || cart.length === 0) {
       Alert.alert("Error", "No products in the cart to place an order.");
     } else {
       Alert.alert("Success", "Order placed successfully!");
@@ -18,7 +18,7 @@ export default function CheckoutScreen({ route, navigation }) {
       <Image source={{ uri: item.image }} style={styles.productImage} />
       <View style={styles.productDetails}>
         <Text style={styles.productText}>{item.title}</Text>
-        <Text style={styles.productPrice}><Text style={{ fontFamily: "verdana" }}>₦</Text>{item.price * 50}</Text>
+        <Text style={styles.productPrice}>₦{item.price * 50}</Text>
       </View>
     </View>
   );
@@ -26,7 +26,7 @@ export default function CheckoutScreen({ route, navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Checkout</Text>
-      {cart.length === 0 ? (
+      {!cart || cart.length === 0 ? (
         <Text style={styles.emptyCart}>Your cart is empty.</Text>
       ) : (
         <FlatList
@@ -39,10 +39,10 @@ export default function CheckoutScreen({ route, navigation }) {
       <TouchableOpacity
         style={[
           styles.checkoutButton,
-          cart.length === 0 && styles.checkoutButtonDisabled,
+          (!cart || cart.length === 0) && styles.checkoutButtonDisabled,
         ]}
         onPress={handleOrderSuccess}
-        disabled={cart ? cart.length === 0 : true}
+        disabled={!cart || cart.length === 0}
       >
         <Text style={styles.checkoutButtonText}>Place Order</Text>
       </TouchableOpacity>
