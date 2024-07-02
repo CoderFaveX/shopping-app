@@ -26,7 +26,7 @@ To run this project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/simple-shopping-app.git
+   git clone https://github.com/CoderFaveX/simple-shopping-app.git
    ```
 
 2. Navigate into the project directory:
@@ -56,3 +56,5 @@ To run this project locally:
 - Add products to the cart on the Products screen.
 - Review and remove items on the Checkout screen.
 - Place an order and view the success screen.
+- I wasn't able to implement ios on appetize.io because I needed a paid apple accout
+- [Download Apk](https://drive.google.com/file/d/19U_mSv4WkiPyIKuEHtAreEm0QBzp2yDN/view?usp=drive_link) -- It's compressed so use WinRAR or 7zip to unzip it
